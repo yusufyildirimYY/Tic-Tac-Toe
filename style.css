@@ -6,3 +6,70 @@
 * {
   margin: 0;
 }
+
+body {
+  background-color: rgb(16, 24, 40);
+}
+.cellsContainer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.scoreBoard {
+  display: flex;
+  gap: 4rem;
+  font-size: 3rem;
+}
+.player {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 1rem;
+  color: rgb(39, 53, 74);
+  font-weight: 600;
+}
+
+.score {
+  font-weight: 800;
+}
+
+.cells {
+  background-color: rgb(39, 53, 74);
+  display: grid;
+  grid-template-columns: repeat(3, 150px);
+  grid-template-rows: repeat(3, 150px);
+  gap: 0.5rem;
+}
+
+.cell {
+  background-color: rgb(16, 24, 40);
+  font-size: 8rem;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+}
+
+.restartButton {
+  padding-block: 0.5rem;
+  padding-inline: 3rem;
+  font-size: 3rem;
+  font-weight: 800;
+  background-color: rgb(39, 53, 74);
+  outline: 0px;
+  border: 0px;
+  color: rgb(16, 24, 40);
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.restartButton:hover {
+  background-color: rgba(39, 53, 74, 0.9);
+}
