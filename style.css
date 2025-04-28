@@ -55,6 +55,26 @@ body {
   justify-content: center;
   cursor: pointer;
   color: white;
+  position: relative;
+}
+.cell.x,
+.cell.circle {
+  cursor: not-allowed;
+}
+.cells.x .cell:not(.x):not(.circle):hover::before {
+  content: "X";
+  color: rgba(255, 255, 255, 0.2);
+}
+.cells.circle .cell:not(.x):not(.circle):hover::before {
+  content: "O";
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.cell.x::before {
+  content: "X";
+}
+.cell.circle::before {
+  content: "O";
 }
 
 .restartButton {
