@@ -9,6 +9,8 @@
 
 body {
   background-color: rgb(16, 24, 40);
+  font-family: "Lato", sans-serif;
+  font-style: normal;
 }
 .cellsContainer {
   width: 100vw;
@@ -44,8 +46,51 @@ body {
   grid-template-columns: repeat(3, 150px);
   grid-template-rows: repeat(3, 150px);
   gap: 0.5rem;
+  position: relative;
 }
-
+.draw {
+  position: absolute;
+  top: 0px;
+  bottom: 10px;
+  left: 0px;
+  right: 0px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 10rem;
+  color: rgb(91, 125, 175);
+}
+.drawText {
+  backdrop-filter: blur(1px);
+  border-radius: 100px;
+  padding-inline: 2rem;
+}
+.slide-in {
+  animation: slide-in 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+@keyframes slide-in {
+  0% {
+    transform: translateZ(-1400px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
+.slide-out {
+  animation: slide-out 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+@keyframes slide-out {
+  0% {
+    transform: translateZ(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateZ(-1100px);
+    opacity: 0;
+  }
+}
 .cell {
   background-color: rgb(16, 24, 40);
   font-size: 8rem;
@@ -57,6 +102,7 @@ body {
   color: white;
   position: relative;
 }
+
 .cell.x,
 .cell.circle {
   cursor: not-allowed;

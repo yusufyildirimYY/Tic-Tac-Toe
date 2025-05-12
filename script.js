@@ -5,6 +5,7 @@ const player2Score = document.querySelector(".player2Score");
 const player1 = document.querySelector(".p1");
 const player2 = document.querySelector(".p2");
 const restartButton = document.querySelector(".restartButton");
+const drawText = document.querySelector(".draw");
 
 const x_class = "x";
 const circle_class = "circle";
@@ -29,8 +30,21 @@ function handleClick(e) {
     changeScore(circleTurn);
     clearCells();
   } else if (isDraw()) {
+    drawText.style.display = "flex";
+    drawText.classList.add("slide-in");
+    setTimeout(() => {
+      drawText.classList.remove("slide-in");
+    }, 700);
+    setTimeout(() => {
+      drawText.classList.add("slide-out");
+    }, 1300);
+    setTimeout(() => {
+      drawText.classList.remove("slide-out");
+    }, 2500);
+    setTimeout(() => {
+      drawText.style.display = "none";
+    }, 2500);
     clearCells();
-    //TODO: ADD DRAW TEXT
   }
 }
 
